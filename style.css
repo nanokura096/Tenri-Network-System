@@ -1,0 +1,156 @@
+/* ==========================================================
+   TENRI NETWORK OS - MOBILE OPTIMIZED STYLE
+   ========================================================== */
+
+:root {
+  --bg: #000;
+  --panel: #050505;
+  --green: #00ff41;
+  --red: #ff2a2a;
+  --gray: #888888;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+  /* スマホの長押しメニューや選択青枠を防止してアプリ感を出す */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--green);
+  overflow: hidden;
+  /* スマホのアドレスバーで画面が跳ねるのを防ぐ */
+  height: 100dvh; 
+}
+
+/* --- ボタン設定：スマホで押しやすく --- */
+button {
+  background: #020202;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 15px 10px; /* 高さを出して押しやすく */
+  font-size: 0.9em;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+
+button:active {
+  background: var(--green);
+  color: #000;
+}
+
+/* --- 全画面レイアウト --- */
+.full-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.terminal-box {
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid var(--green);
+  background: var(--panel);
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+}
+
+/* --- メイン端末画面 --- */
+#mainTerminal {
+  display: none;
+  flex-direction: column;
+  height: 100dvh;
+  padding: 10px;
+}
+
+#logo {
+  border-bottom: 1px solid var(--green);
+  padding: 5px 10px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+#statusbar {
+  display: flex !important;
+  justify-content: space-between;
+  padding: 5px 15px;
+  font-size: 0.75em;
+  opacity: 0.9;
+  background: rgba(0, 255, 65, 0.05);
+}
+
+/* ボタンのグリッド配置（スマホで2列） */
+.main-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+#output {
+  flex: 1;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 0.95em;
+  line-height: 1.4;
+  background: rgba(0, 5, 0, 0.5);
+}
+
+/* 検索結果のボタン */
+.data-btn {
+  width: 100%;
+  margin-top: 8px;
+  text-align: left;
+  border-style: dashed;
+}
+
+/* ログアウトエリア */
+.SHUTDOWN-zone {
+  margin-top: 10px;
+}
+.SHUTDOWN-zone button {
+  width: 100%;
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* --- ステータス別カラー --- */
+.status-active { color: var(--green); }
+.status-kia { 
+  color: var(--red); 
+  font-weight: bold; 
+  text-shadow: 0 0 5px var(--red);
+}
+.status-mia { color: var(--gray); }
+
+/* --- 演出用アニメーション --- */
+.blink {
+  animation: terminal-blink 1.5s infinite;
+}
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.terminal-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--green);
+  color: var(--green);
+  font-size: 1.2em;
+  padding: 5px;
+  outline: none;
+}
