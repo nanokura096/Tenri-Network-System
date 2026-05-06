@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tenri Network OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="bootScreen" class="full-screen" style="z-index:10000; cursor:pointer;">
+    <div class="blink" style="color:var(--green); font-size:1.2em;">[ CLICK TO BOOT SYSTEM ]</div>
+  </div>
+
+  <div id="loginScreen" class="full-screen" style="display:none;">
+    <div class="terminal-box">
+      <div id="loginConsole"></div>
+    </div>
+  </div>
+
+  <div id="mainTerminal" style="display:none; flex-direction:column;">
+    <div id="logo">TENRI NETWORK OS // TOA-226</div>
+    
+    <div id="statusbar" style="display: flex !important; justify-content: space-between; width: 100%; box-sizing: border-box; padding: 0 15px;">
+      <span>SYSTEM ONLINE</span>
+      <span id="system-clock"></span>
+    </div>
+    
+    <div class="main-buttons">
+      <button onclick="playSound('click'); helpCommand()">HELP</button>
+      <button onclick="playSound('click'); showPersonnelButtons()">PERSONNEL</button>
+      <button onclick="playSound('click'); showObjectButtons()">OBJECTS</button>
+      <button onclick="playSound('click'); openSecretAuth()">SECRET</button>
+    </div>
+
+    <div id="output"></div>
+
+    <div class="SHUTDOWN-zone">
+      <button onclick="playSound('click'); openSHUTDOWNConfirm()">SHUTDOWN</button>
+    </div>
+  </div>
+
+  <div id="secretAuth" class="full-screen" style="display:none;">
+    <div class="terminal-box">
+      <div class="blink" style="color:var(--red);margin-bottom:15px;">[ SECURITY AUTHORIZATION REQUIRED ]</div>
+      <div style="margin-bottom:10px;">Enter Clearance Password</div>
+      <input type="password" id="secretPassInput" class="terminal-input" placeholder="PASSWORD">
+      <div class="quick-buttons">
+        <button onclick="confirmSecretAccess()">DECRYPT</button>
+        <button onclick="closeSecretAuth()">ABORT</button>
+      </div>
+      <div id="secretError" style="margin-top:12px;color:var(--red);"></div>
+    </div>
+  </div>
+
+  <div id="SHUTDOWNConfirm" class="full-screen" style="display:none;">
+    <div class="terminal-box danger">
+      <div class="blink" style="color:var(--red);margin-bottom:15px;">[ SYSTEM REBOOT CONFIRM ]</div>
+      <div style="margin-bottom:10px;">Disconnect administrator session?</div>
+      <div class="quick-buttons">
+        <button onclick="confirmSHUTDOWN()">REBOOT</button>
+        <button onclick="closeSHUTDOWNConfirm()">ABORT</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="database.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
