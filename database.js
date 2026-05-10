@@ -477,7 +477,84 @@ OBJ-000115を参照。
 ちなみにお酒に弱く、お酒を飲むとよく喋る。`,
  secretRecord: `彼女は腐り果てた天理秩序機関の唯一の「まともな存在」だった。
  可楚はその点を見て、動くはずのなかった夏の心を動かした。`
-}
+},
+
+{
+  id: 'AP-665665',
+  name: 'レントラー・レミントン',
+  sex: 'MALE',
+  age: '██',
+  division: '天理秩序機関管理人専属秘書',
+  rank: '秘書',
+  ability: `身体強化
+純粋な身体強化。`,
+  status: 'ACTIVE',
+  secret: false, // これをtrueにするとSECRET扱い
+  profile: `一度退職したが、また帰ってきた。`,
+},
+
+{
+  id: 'AP-114114',
+  name: '坂口 檸檬',
+  sex: 'MALE',
+  age: '██',
+  division: '天理秩序機関副管理人',
+  rank: '副管理人',
+  ability: `不眠症
+寝る必要がない。`,
+  status: 'ACTIVE',
+  secret: false, // これをtrueにするとSECRET扱い
+  profile: `一度退職したが、また帰ってきた。`,
+},
+
+{
+  id: '115414',
+  name: 'グレイス',
+  sex: 'FEMALE',
+  age: '██',
+  division: '天理秩序機関部隊総合責任者',
+  rank: '部隊総合責任者',
+  ability: `none`,
+  status: 'ACTIVE',
+  secret: false, // これをtrueにするとSECRET扱い
+  profile: `一度退職したが、また帰ってきた。昔は「グレイト」という名だった。`,
+},
+
+{
+  id: 'AP-115115',
+  name: '██ 梨花',
+  sex: 'FEMALE',
+  age: '██',
+  division: '天理秩序機関幹部専属戦闘員',
+  rank: '専属戦闘員',
+  ability: `雷撃
+電気を操る。自分自身も素早く動き、電気のように痺れる打撃を打つ。
+`,
+  status: 'ACTIVE',
+  secret: false, // これをtrueにするとSECRET扱い
+  profile: `一度退職したが、また帰ってきた。`,
+},
+
+
+{
+  id: 'AP-115115',
+  name: '██ 梨緒',
+  sex: 'FEMALE',
+  age: '██',
+  division: '天理秩序機関幹部専属戦闘員',
+  rank: '専属戦闘員',
+  ability: `氷撃
+氷を操る。自分自身は滑るように素早く動き、氷のように冷たい打撃を打つ。
+`,
+  status: 'ACTIVE',
+  secret: false, // これをtrueにするとSECRET扱い
+  profile: `一度退職したが、また帰ってきた。`,
+},
+
+
+
+
+
 
   ],
   objects: [
